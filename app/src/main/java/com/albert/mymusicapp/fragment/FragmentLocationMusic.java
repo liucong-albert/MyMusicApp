@@ -1,6 +1,6 @@
-package com.albert.mymusicapp;
+package com.albert.mymusicapp.fragment;
 
-import android.content.ContentProvider;
+import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.albert.mymusicapp.adapter.LocationMusicAdapter;
+import com.albert.mymusicapp.R;
 import com.albert.mymusicapp.model.MusicBean;
 
 import java.util.ArrayList;
@@ -37,8 +39,8 @@ public class FragmentLocationMusic extends Fragment {
             MediaStore.Audio.Media.SIZE,       //长度
             MediaStore.Audio.Media.DATA,       //路径
     };
-    @BindView(R.id.musiclist)
-    RecyclerView musicRecyclerView;
+    @BindView(R.id.reclcyclerview_musiclist)
+    RecyclerView mMusicRecyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
         if (mView == null){
@@ -55,9 +57,9 @@ public class FragmentLocationMusic extends Fragment {
     private void init(){
         getLocationMusicList();
         LinearLayoutManager layoutManager =new LinearLayoutManager(getActivity());
-        musicRecyclerView.setLayoutManager(layoutManager);
+        mMusicRecyclerView.setLayoutManager(layoutManager);
         mAdapter = new LocationMusicAdapter(getActivity(),mMusicList);
-        musicRecyclerView.setAdapter(mAdapter);
+        mMusicRecyclerView.setAdapter(mAdapter);
     }
 
     /**
@@ -89,6 +91,11 @@ public class FragmentLocationMusic extends Fragment {
             musicBean.setSize(size);
             musicBean.setUrl(url);
             mMusicList.add(musicBean);
+        }
+    }
+    class myAsyHalder extends AsyncQueryHandler{
+        public myAsyHalder(ContentResolver cr) {
+            super(cr);
         }
     }
 }

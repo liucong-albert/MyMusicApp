@@ -1,4 +1,4 @@
-package com.albert.mymusicapp;
+package com.albert.mymusicapp.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.albert.mymusicapp.R;
 import com.albert.mymusicapp.model.MusicBean;
 
 import java.util.ArrayList;
