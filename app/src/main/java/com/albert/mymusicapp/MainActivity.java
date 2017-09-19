@@ -1,18 +1,11 @@
 package com.albert.mymusicapp;
 
-import android.graphics.Color;
-import android.os.Build;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.WindowManager;
-import android.widget.Button;
-
 import com.albert.mymusicapp.fragment.FragmentLocationMusic;
 import com.albert.mymusicapp.fragment.FragmentNetMusic;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 

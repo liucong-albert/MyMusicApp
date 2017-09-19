@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
-    <TextView
-        android:layout_width="match_parent"
+    android:id="@+id/relay_adapterloactionmusic_contair"
+    android:layout_height="55dp">
+    <ImageView
+        android:id="@+id/img_adapterloactionmusic_musicicon"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/tv_locationmusic_name"/>
+        android:layout_margin="10dp"
+        android:src="@drawable/note_btn_love"/>
+    <LinearLayout
+        android:layout_toRightOf="@+id/img_adapterloactionmusic_musicicon"
+        android:layout_toLeftOf="@+id/imgbtn_adapterlocationmusic_more"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="music name"
+            android:textSize="15sp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:singleLine="true"
+            android:id="@+id/tv_adapterlocationmusic_musicname"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="music author"
+            android:textSize="11sp"
+            android:focusable="true"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:id="@+id/tv_adapterlocationmusic_musicauthor"/>
+    </LinearLayout>
+    <ImageButton
+        android:layout_alignParentRight="true"
+        android:id="@+id/imgbtn_adapterlocationmusic_more"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:layout_margin="15dp"
+        android:src="@drawable/list_icon_more"
+        android:background="@null"/>
 
-</LinearLayout>
+
+</RelativeLayout>

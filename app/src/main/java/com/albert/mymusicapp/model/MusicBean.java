@@ -1,11 +1,13 @@
 package com.albert.mymusicapp.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017-08-16.
  * 音乐文件信息
  */
 
-public class MusicBean {
+public class MusicBean implements Serializable{
     private long id;
     private String title;
     private String album;
