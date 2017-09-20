@@ -40,7 +40,7 @@ public class LocationMusicAdapter extends RecyclerView.Adapter<LocationMusicAdap
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(MyHolder holder, final int position) {
         final MusicBean musicBean = mList.get(position);
         holder.mName.setText(""+musicBean.getTitle());
         holder.mName.setSelected(true);
@@ -50,7 +50,8 @@ public class LocationMusicAdapter extends RecyclerView.Adapter<LocationMusicAdap
             public void onClick(View v) {
                 Intent intent = new Intent(mContext,PlayingActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("data",musicBean);
+                bundle.putSerializable("data",mList);
+                bundle.putInt("position",position);
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
