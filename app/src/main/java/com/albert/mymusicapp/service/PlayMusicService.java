@@ -93,15 +93,6 @@ public class PlayMusicService extends Service {
         return false;
     }
 
-    public String getCurrentTime(){
-        String time = "0";
-        if (mMediaPlayer != null){
-            long currentPosition = mMediaPlayer.getCurrentPosition()/1000;
-            time = currentPosition/60 + ":" +currentPosition%60;
-        }
-        return time;
-    }
-
     public int getSeekBarProgress(){
         double s1 = mMediaPlayer.getCurrentPosition();
         double s2 = mCurrentMusicBean.getDuration();
